@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 27 27 26; /* #1b1b1a - dark background */
+    --foreground: 214 214 215; /* #d6d6d7 - light text */
+    --card: 27 27 26;
+    --card-foreground: 214 214 215;
+    --popover: 27 27 26;
+    --popover-foreground: 214 214 215;
+    --primary: 76 162 192; /* #4ca2c0 - blue accent */
+    --primary-foreground: 255 255 255;
+    --secondary: 70 69 70; /* #464546 - dark gray */
+    --secondary-foreground: 214 214 215;
+    --muted: 70 69 70;
+    --muted-foreground: 113 113 114; /* #717172 - gray text */
+    --accent: 70 69 70;
+    --accent-foreground: 214 214 215;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 70 69 70; /* #464546 */
+    --input: 70 69 70;
+    --ring: 76 162 192; /* #4ca2c0 */
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom styles for React Flow */
+.react-flow__node {
+  @apply bg-card border-border text-foreground;
+}
+
+.react-flow__edge {
+  stroke: hsl(var(--primary));
+}
+
+.react-flow__controls {
+  @apply bg-card border-border;
+}
+
+.react-flow__controls button {
+  @apply bg-card border-border text-foreground hover:bg-secondary;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-md;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground;
+}
